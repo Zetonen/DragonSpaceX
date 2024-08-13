@@ -8,6 +8,7 @@ body {
   color: ${colors.WHITE};
   font-family: "Rubik";
   font-size: 14px;
+  background: ${colors.BLACK};
 }
 ul,
 ol {
