@@ -8,7 +8,7 @@ import { Container } from "../../../../components/Container/Container";
 import { useEffect, useRef, useState } from "react";
 
 const AnimatedNumber = ({ n }) => {
-  return <WrapAnimated start={0} end={n} duration={2} delay={0} />;
+  return <WrapAnimated start={0} end={n} duration={2} delay={0.3} />;
 };
 const defaultValue = [
   { n: 43, title: "TOTAL LAUNCHES" },
