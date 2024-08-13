@@ -3,6 +3,7 @@ import { StyledContainer } from "../../../../components/Container/Container.styl
 import BackgroundRocket from "/src/assets/images/rocket.gif";
 
 export const HeroStyled = styled.section`
+  margin-bottom: 100px;
   padding-top: 48px;
 `;
 

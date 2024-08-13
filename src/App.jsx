@@ -1,12 +1,18 @@
+import { Route, Routes } from "react-router-dom";
 import { GlobalStyles } from "./components/GlobalStyles";
-import { Header } from "./components/Header/Header";
-import { Hero } from "./pages/Home/components/Hero/Hero";
+import { SharedLayout } from "./components/SharedLayout";
+import { Page404 } from "./pages/Page404";
+import { Home } from "./pages/Home/Home";
 
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />{" "}
+          <Route path="*" element={<Page404 />} />
+        </Route>
+      </Routes>
       <GlobalStyles />
     </>
   );
