@@ -8,6 +8,7 @@ body {
   color: ${colors.WHITE};
   font-family: "Rubik";
   font-size: 14px;
+  font-weight: 400;
   background: ${colors.BLACK};
 }
 ul,

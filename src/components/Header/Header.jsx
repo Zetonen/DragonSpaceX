@@ -24,7 +24,7 @@ export const Header = () => {
             </li>
           ))}
         </NavList>
-        <Logo to="/">Logo</Logo>
+        <Logo to="/">COntact form</Logo>
       </HeaderContainer>
     </HeaderStyled>
   );
