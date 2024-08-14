@@ -1,4 +1,5 @@
 import {
+  RocketsStyled,
   StatisticsList,
   StatisticsListText,
   Title,
@@ -47,7 +48,7 @@ export const Rockets = () => {
   }, [myRef, inView]);
 
   return (
-    <section ref={myRef}>
+    <RocketsStyled ref={myRef}>
       <Container>
         <Title>Our Rockets</Title>
         <StatisticsList>
@@ -59,6 +60,6 @@ export const Rockets = () => {
           ))}
         </StatisticsList>
       </Container>
-    </section>
+    </RocketsStyled>
   );
 };

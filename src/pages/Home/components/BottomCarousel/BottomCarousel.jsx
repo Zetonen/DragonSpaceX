@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { finalCarousel } from "../../../../constants/data";
+import { finalCarousel } from "../../../../constants/data/finalCarousel";
 import {
   BottomCarouselContainer,
   Btn,
@@ -41,7 +41,6 @@ export const BottomCarousel = () => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={0}
         slidesPerView={1}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {finalCarousel.map((item, i) => (
           <SwiperSlide key={i}>
