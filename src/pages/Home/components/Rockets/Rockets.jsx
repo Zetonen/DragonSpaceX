@@ -7,6 +7,10 @@ import {
 } from "./Rockets.styled";
 import { Container } from "../../../../components/Container/Container";
 import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRockets } from "../../../../redux/rocket/operations";
+import { selectIsRockets } from "../../../../redux/rocket/selectors";
+import { RocketsCarousel } from "../../../../components/RocketsCarousel/RocketsCarousel";
 
 const AnimatedNumber = ({ n }) => {
   return <WrapAnimated start={0} end={n} duration={2} delay={0.3} />;
@@ -19,6 +23,11 @@ const defaultValue = [
 export const Rockets = () => {
   const myRef = useRef(null);
   const [inView, setInView] = useState(false);
+  const rockets = useSelector(selectIsRockets);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getRockets());
+  }, [dispatch]);
   useEffect(() => {
     const handleScroll = () => {
       if (
@@ -51,6 +60,7 @@ export const Rockets = () => {
     <RocketsStyled ref={myRef}>
       <Container>
         <Title>Our Rockets</Title>
+        <RocketsCarousel slides={rockets} />
         <StatisticsList>
           {defaultValue.map((item) => (
             <li key={item.title}>
