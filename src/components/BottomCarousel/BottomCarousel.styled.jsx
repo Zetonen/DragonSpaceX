@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledContainer } from "../../../../components/Container/Container.styled";
+import { StyledContainer } from "../Container/Container.styled";
 
 export const BottomCarouselContainer = styled(StyledContainer)`
   width: 1440px;

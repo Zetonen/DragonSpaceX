@@ -3,10 +3,10 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css";
 import { RocketsCard } from "../RocketsCard/RocketsCard";
 import { Btn, WrapButtons } from "./RocketsCarousel.styled";
-import { ArrowLeftIcon } from "../icons/ArrowLeftIcon";
-import { ArrowRightIcon } from "../icons/ArrowRightIcon";
 import { SwiperStyled } from "./RocketsCarousel.styled";
 import "./style.css";
+import { ArrowLeftIcon } from "../../../../components/icons/ArrowLeftIcon";
+import { ArrowRightIcon } from "../../../../components/icons/ArrowRightIcon";
 export default function SlideNextButton() {
   const swiper = useSwiper();
 
@@ -29,8 +29,6 @@ export const RocketsCarousel = ({ slides }) => {
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={20}
       slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {slides.map((slide, i) => (
         <SwiperSlide key={slide.id + i}>

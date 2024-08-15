@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRockets } from "../../../../redux/rocket/operations";
 import { selectIsRockets } from "../../../../redux/rocket/selectors";
-import { RocketsCarousel } from "../../../../components/RocketsCarousel/RocketsCarousel";
+import { RocketsCarousel } from "../RocketsCarousel/RocketsCarousel";
 
 const AnimatedNumber = ({ n }) => {
   return <WrapAnimated start={0} end={n} duration={2} delay={0.3} />;

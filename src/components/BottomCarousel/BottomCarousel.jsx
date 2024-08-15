@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { finalCarousel } from "../../../../constants/data/finalCarousel";
 import {
   BottomCarouselContainer,
   Btn,
@@ -15,8 +14,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useSwiper } from "swiper/react";
 import "./style.css";
-import { ArrowLeftIcon } from "../../../../components/icons/ArrowLeftIcon";
-import { ArrowRightIcon } from "../../../../components/icons/ArrowRightIcon";
+import { finalCarousel } from "../../constants/data/finalCarousel";
+import { ArrowLeftIcon } from "../icons/ArrowLeftIcon";
+import { ArrowRightIcon } from "../icons/ArrowRightIcon";
 
 export default function SlideNextButton() {
   const swiper = useSwiper();

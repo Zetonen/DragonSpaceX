@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const HeroStyled = styled.section`
+  margin-bottom: 100px;
   padding-top: 180px;
 `;
 export const Title = styled.h1`
