@@ -16,11 +16,21 @@ export const RocketsCard = ({ rocket }) => {
       </Field>
       <Field>
         <Text>SPACECRAFT VOLUME</Text>
-        <Text>{`${rocket.pressurized_capsule.payload_volume.cubic_meters} M / ${rocket.pressurized_capsule.payload_volume.cubic_feet} FT`}</Text>
+        <Text>
+          {`${rocket.pressurized_capsule.payload_volume.cubic_meters} M`}
+          <sup>3</sup>
+          {` / ${rocket.pressurized_capsule.payload_volume.cubic_feet} FT`}
+          <sup>3</sup>
+        </Text>
       </Field>
       <Field>
         <Text>TRUNK VOLUME</Text>
-        <Text>{`${rocket.trunk.trunk_volume.cubic_meters} M / ${rocket.trunk.trunk_volume.cubic_feet} FT`}</Text>
+        <Text>
+          {`${rocket.trunk.trunk_volume.cubic_meters} M`}
+          <sup>3</sup>
+          {` / ${rocket.trunk.trunk_volume.cubic_feet} FT`}
+          <sup>3</sup>
+        </Text>
       </Field>
       <Field>
         <Text>LAUNCH PAYLOAD MASS</Text>

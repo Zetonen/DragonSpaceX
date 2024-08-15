@@ -6,12 +6,12 @@ import { Team } from "./components/Team/Team";
 
 export const Home = () => {
   return (
-    <>
+    <main>
       <Hero />
       <Rockets />
       <About />
       <Team />
       <BottomCarousel />
-    </>
+    </main>
   );
 };
