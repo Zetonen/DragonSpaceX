@@ -71,14 +71,15 @@ export const SaveBtn = styled.button`
     box-shadow: none;
   }
 `;
-export const ErrorText = styled.p`
+export const ErrMessage = styled(ErrorMessage)`
   position: absolute;
   bottom: 0;
+  left: 50%;
   width: 100%;
   color: ${colors.RED};
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 1.9px;
   text-align: center;
-  transform: translateY(100%);
+  transform: translate(-50%, 100%);
 `;

@@ -2,7 +2,7 @@ import { CloseModalIcon } from "../../icons/CloseModalIcon";
 import BaseModalWrap from "../ModalWrap/ModalWrap";
 import {
   CloseBtn,
-  ErrorText,
+  ErrMessage,
   InputField,
   SaveBtn,
   StyledForm,
@@ -36,7 +36,7 @@ const schema = Yup.object().shape({
 });
 export const SignIn = ({ onClose }) => {
   return (
-    <BaseModalWrap onClose={onClose} >
+    <BaseModalWrap onClose={onClose}>
       <Window>
         <CloseBtn type="button" id="closeBtn">
           <CloseModalIcon width={32} height={32} />
@@ -59,9 +59,7 @@ export const SignIn = ({ onClose }) => {
                   value={values.name}
                   name="name"
                 />
-                {errors.name && touched.name && (
-                  <ErrorText>{errors.name}</ErrorText>
-                )}
+                <ErrMessage component="span" name="name" />
               </WrapField>
               <WrapField>
                 <InputField
@@ -72,9 +70,7 @@ export const SignIn = ({ onClose }) => {
                   value={values.email}
                   name="email"
                 />
-                {errors.email && touched.email && (
-                  <ErrorText>{errors.email}</ErrorText>
-                )}
+                <ErrMessage component="span" name="email" />
               </WrapField>
               <WrapField>
                 <InputField
@@ -86,9 +82,7 @@ export const SignIn = ({ onClose }) => {
                   value={values.password}
                   name="password"
                 />
-                {errors.password && touched.password && (
-                  <ErrorText>{errors.password}</ErrorText>
-                )}
+                <ErrMessage component="span" name="password" />
               </WrapField>
               <SaveBtn type="submit">Sing Up</SaveBtn>
             </StyledForm>
