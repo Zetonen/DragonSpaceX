@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "./Header/Header";
 
-export const SharedLayout = () => {
+export const SharedLayout = ({setModalName}) => {
   return (
     <>
-      <Header />
+      <Header setModalName={setModalName}/>
       <Outlet />
     </>
   );

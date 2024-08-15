@@ -5,7 +5,11 @@ const BaseModalWrap = ({ children, onClose }) => {
   const [closing, setClosing] = useState(false);
   document.body.style.overflow = "hidden";
   const CloseModal = (e) => {
-    if (e.code === "Escape" || e.target === e.currentTarget) {
+    if (
+      e.code === "Escape" ||
+      e.target === e.currentTarget ||
+      e.target.closest("button")?.id === "closeBtn"
+    ) {
       setClosing(true);
       setTimeout(() => {
         setClosing(false);

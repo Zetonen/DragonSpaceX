@@ -11,7 +11,7 @@ import {
   WrapSignBtn,
 } from "./Header.styled";
 
-export const Header = () => {
+export const Header = ({ setModalName }) => {
   return (
     <HeaderStyled>
       <HeaderContainer>
@@ -28,8 +28,8 @@ export const Header = () => {
           ))}
         </NavList>
         <WrapSignBtn>
-          <SignInBtn>Sign in</SignInBtn>
-          <SignUpBtn>Sign up</SignUpBtn>
+          <SignInBtn onClick={() => setModalName("signin")}>Sign in</SignInBtn>
+          <SignUpBtn onClick={() => setModalName("signup")}>Sign up</SignUpBtn>
         </WrapSignBtn>
       </HeaderContainer>
     </HeaderStyled>

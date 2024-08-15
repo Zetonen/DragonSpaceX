@@ -5,18 +5,23 @@ import { Page404 } from "./pages/Page404";
 import { Home } from "./pages/Home/Home";
 import { Toaster } from "react-hot-toast";
 import { RocketDetails } from "./pages/RocketDetails/RocketDetails";
+import { ModalSelector } from "./components/modals/ModalSelector";
+import { useState } from "react";
 
 function App() {
+  const [modalName, setModalName] = useState("");
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<SharedLayout setModalName={setModalName} />}>
           <Route index element={<Home />} />
           <Route path="rockets/:id" element={<RocketDetails />} />
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
       <Toaster />
+      <ModalSelector modalName={modalName} closeModal={() => setModalName("")} />
       <GlobalStyles />
     </>
   );
