@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Container } from "../../../components/Container/Container";
+import { Container } from "../../../../components/Container/Container";
 import {
   Card,
   CardTitle,
@@ -12,7 +12,8 @@ import {
 } from "./Hero.styled";
 import RocketImg from "/src/assets/images/rocket.gif";
 import { useSelector } from "react-redux";
-import { selectIsRocket } from "../../../redux/rocket/selectors";
+import { selectIsRocket } from "../../../../redux/rocket/selectors";
+import { ImgCarousel } from "../ImgCarousel/ImgCarousel";
 
 export const Hero = () => {
   const { id } = useParams();
@@ -23,7 +24,11 @@ export const Hero = () => {
         <Title>Rockets</Title>
         <Rocket>
           <ThumbImg>
-            <img src={RocketImg} alt="rocket" />
+            {rocket.flickr_images.length > 0 ? (
+              <ImgCarousel slides={rocket.flickr_images} name={rocket.name} />
+            ) : (
+              <img src={RocketImg} alt="rocket" />
+            )}
           </ThumbImg>
           <RocketsInfo rocket={rocket} />
         </Rocket>

@@ -1,5 +1,5 @@
 import { BottomCarousel } from "../../components/BottomCarousel/BottomCarousel";
-import { Hero } from "./Hero/Hero";
+import { Hero } from "./components/Hero/Hero";
 
 export const RocketDetails = () => {
   return (
