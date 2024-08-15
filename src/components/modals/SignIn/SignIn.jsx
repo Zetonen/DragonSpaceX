@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { login } from "../../../redux/user/operations";
 import { CloseModalIcon } from "../../icons/CloseModalIcon";
 import BaseModalWrap from "../ModalWrap/ModalWrap";
 import {
@@ -27,6 +29,7 @@ const schema = Yup.object().shape({
     .required("This field is required"),
 });
 export const SignIn = ({ onClose }) => {
+  const dispatch = useDispatch();
   return (
     <BaseModalWrap onClose={onClose}>
       <Window>
@@ -36,7 +39,9 @@ export const SignIn = ({ onClose }) => {
         <Formik
           initialValues={initialValues}
           onSubmit={(values, actions) => {
-            console.log(values);
+            dispatch(login(values));
+            actions.resetForm(initialValues);
+            onClose();
           }}
           validationSchema={schema}
         >
@@ -65,7 +70,7 @@ export const SignIn = ({ onClose }) => {
                 />
                 <ErrMessage component="span" name="password" />
               </WrapField>
-              <SaveBtn type="submit">Sing Up</SaveBtn>
+              <SaveBtn type="submit">Sign In</SaveBtn>
             </StyledForm>
           )}
         </Formik>

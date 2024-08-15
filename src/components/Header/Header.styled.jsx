@@ -57,7 +57,7 @@ export const WrapSignBtn = styled.div`
   gap: 20px;
 `;
 
-export const SignBtn = styled.button`
+export const Btn = styled.button`
   padding: 7px 11px;
   font-size: 16px;
   line-height: normal;
@@ -65,10 +65,17 @@ export const SignBtn = styled.button`
   background-color: transparent;
   cursor: pointer;
 `;
-export const SignUpBtn = styled(SignBtn)`
+export const SignUpBtn = styled(Btn)`
   border: 1px solid ${colors.WHITE};
   border-radius: 21px;
 `;
-export const SignInBtn = styled(SignBtn)`
+export const SignInBtn = styled(Btn)`
   border: 1px solid transparent;
+`;
+export const FavoriteBtn = styled(Btn)`
+  border: 1px solid transparent;
+`;
+export const LogoutBtn = styled(Btn)`
+  border: 1px solid ${colors.WHITE};
+  border-radius: 21px;
 `;

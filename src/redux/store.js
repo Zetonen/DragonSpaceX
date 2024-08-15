@@ -26,7 +26,7 @@ const rocketPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    // user: persistReducer(userPersistConfig, usersReducer),
+    user: persistReducer(userPersistConfig, usersReducer),
     rockets: persistReducer(rocketPersistConfig, rocketsReducer),
   },
   middleware: (getDefaultMiddleware) =>

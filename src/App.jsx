@@ -11,20 +11,37 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRockets } from "./redux/rocket/operations";
 import { selectIsLoadingRockets } from "./redux/rocket/selectors";
 import { Loader } from "./components/Loader/Loader";
+import {
+  selectIsLoadingUsers,
+  selectIsRefreshing,
+} from "./redux/user/selectors";
+import { FavoritesRockets } from "./pages/FavoritesRockets/FavoritesRockets";
+import { PrivateRoute } from "./components/PrivateRoute";
+import { refreshUser } from "./redux/user/operations";
 
 function App() {
   const [modalName, setModalName] = useState("");
   const isLoadingRockets = useSelector(selectIsLoadingRockets);
+  const isLoadingUsers = useSelector(selectIsLoadingUsers);
+  const isRefreshing = useSelector(selectIsRefreshing);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRockets());
-  });
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
   return (
     <>
       <Routes>
         <Route path="/" element={<SharedLayout setModalName={setModalName} />}>
           <Route index element={<Home />} />
           <Route path="rockets/:id" element={<RocketDetails />} />
+          <Route
+            path="favorites"
+            element={<PrivateRoute component={<FavoritesRockets />} to="/" />}
+          />
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
@@ -33,7 +50,7 @@ function App() {
         modalName={modalName}
         closeModal={() => setModalName("")}
       />
-      {isLoadingRockets && <Loader />}
+      {(isLoadingRockets || isLoadingUsers || isRefreshing) && <Loader />}
       <GlobalStyles />
     </>
   );

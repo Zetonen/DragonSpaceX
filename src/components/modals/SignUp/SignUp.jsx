@@ -84,7 +84,7 @@ export const SignUp = ({ onClose }) => {
                 />
                 <ErrMessage component="span" name="password" />
               </WrapField>
-              <SaveBtn type="submit">Sing Up</SaveBtn>
+              <SaveBtn type="submit">Sign Up</SaveBtn>
             </StyledForm>
           )}
         </Formik>
