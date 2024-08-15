@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Swiper } from "swiper/react";
-
-export const SwiperStyled = styled(Swiper)`
-  margin-bottom: 100px;
-`;
 
 export const Card = styled(Link)`
   display: block;

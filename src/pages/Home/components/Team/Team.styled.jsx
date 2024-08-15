@@ -77,6 +77,7 @@ const Btn = styled.button`
   padding: 23px;
   border: 1px solid transparent;
   border-radius: 20px;
+  cursor: pointer;
 `;
 export const BtnRight = styled(Btn)`
   background-color: ${(p) => {
