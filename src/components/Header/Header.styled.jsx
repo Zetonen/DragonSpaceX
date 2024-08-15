@@ -21,7 +21,6 @@ export const Logo = styled(Link)`
   font-size: 16px;
   line-height: normal;
   text-transform: uppercase;
-  border-radius: 21px;
   border: 1px solid ${colors.WHITE};
   border-radius: 21px;
   cursor: pointer;
@@ -51,19 +50,25 @@ export const DisabledLink = styled.p`
   font-size: 16px;
   line-height: normal;
   text-transform: uppercase;
-  cursor: default;
-  &:hover::after {
-    content: "Disabled";
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 60%;
-    color: #fff;
-    font-size: 12px;
-    /* width: 80px;
-    height: 80px; */
-    /* background-image: url("../../assets/images/disabled.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; */
-  }
+  cursor: no-drop;
+`;
+export const WrapSignBtn = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+export const SignBtn = styled.button`
+  padding: 7px 11px;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+`;
+export const SignUpBtn = styled(SignBtn)`
+  border: 1px solid ${colors.WHITE};
+  border-radius: 21px;
+`;
+export const SignInBtn = styled(SignBtn)`
+  border: 1px solid transparent;
 `;

@@ -6,6 +6,9 @@ import {
   Logo,
   NavList,
   NavListItemLink,
+  SignInBtn,
+  SignUpBtn,
+  WrapSignBtn,
 } from "./Header.styled";
 
 export const Header = () => {
@@ -24,7 +27,10 @@ export const Header = () => {
             </li>
           ))}
         </NavList>
-        <Logo to="/">COntact form</Logo>
+        <WrapSignBtn>
+          <SignInBtn>Sign in</SignInBtn>
+          <SignUpBtn>Sign up</SignUpBtn>
+        </WrapSignBtn>
       </HeaderContainer>
     </HeaderStyled>
   );

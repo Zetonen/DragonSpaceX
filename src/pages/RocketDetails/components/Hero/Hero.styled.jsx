@@ -20,7 +20,7 @@ export const Rocket = styled.div`
   border-radius: 40px;
 `;
 export const ThumbImg = styled.div`
-  max-width: 790px;
+  width: 790px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
 `;
@@ -49,6 +49,14 @@ export const Field = styled.div`
 `;
 export const Text = styled.p`
   font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+`;
+export const ErrorText = styled.p`
+  margin-bottom: 32px;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
 `;

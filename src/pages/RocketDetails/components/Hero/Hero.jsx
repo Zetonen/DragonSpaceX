@@ -3,6 +3,7 @@ import { Container } from "../../../../components/Container/Container";
 import {
   Card,
   CardTitle,
+  ErrorText,
   Field,
   HeroStyled,
   Rocket,
@@ -22,16 +23,20 @@ export const Hero = () => {
     <HeroStyled>
       <Container>
         <Title>Rockets</Title>
-        <Rocket>
-          <ThumbImg>
-            {rocket.flickr_images.length > 0 ? (
-              <ImgCarousel slides={rocket.flickr_images} name={rocket.name} />
-            ) : (
-              <img src={RocketImg} alt="rocket" />
-            )}
-          </ThumbImg>
-          <RocketsInfo rocket={rocket} />
-        </Rocket>
+        {rocket ? (
+          <Rocket>
+            <ThumbImg>
+              {rocket.flickr_images.length > 0 ? (
+                <ImgCarousel slides={rocket.flickr_images} name={rocket.name} />
+              ) : (
+                <img src={RocketImg} alt="rocket" />
+              )}
+            </ThumbImg>
+            <RocketsInfo rocket={rocket} />
+          </Rocket>
+        ) : (
+          <ErrorText>NOT FOUND</ErrorText>
+        )}
       </Container>
     </HeroStyled>
   );
