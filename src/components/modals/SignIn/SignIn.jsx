@@ -13,19 +13,11 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 const initialValues = {
-  name: "",
   email: "",
   password: "",
 };
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const nameRegexp = /^[a-zA-Z]+$/;
 const schema = Yup.object().shape({
-  name: Yup.string()
-    .matches(
-      nameRegexp,
-      "Only the first name. Only English letters are allowed"
-    )
-    .required("This field is required"),
   password: Yup.string()
     .min(6, "Volume can't be < 6")
     .required("This field is required"),
@@ -50,17 +42,6 @@ export const SignIn = ({ onClose }) => {
         >
           {({ values, errors, touched, handleSubmit }) => (
             <StyledForm onSubmit={handleSubmit}>
-              <WrapField>
-                <InputField
-                  className={errors.name && touched.name && "error"}
-                  type="text"
-                  placeholder="Your name"
-                  // onChange={handleChange}
-                  value={values.name}
-                  name="name"
-                />
-                <ErrMessage component="span" name="name" />
-              </WrapField>
               <WrapField>
                 <InputField
                   className={errors.email && touched.email && "error"}
