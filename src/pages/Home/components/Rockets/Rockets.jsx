@@ -7,8 +7,7 @@ import {
 } from "./Rockets.styled";
 import { Container } from "../../../../components/Container/Container";
 import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getRockets } from "../../../../redux/rocket/operations";
+import { useSelector } from "react-redux";
 import { selectIsRockets } from "../../../../redux/rocket/selectors";
 import { RocketsCarousel } from "../RocketsCarousel/RocketsCarousel";
 
@@ -24,10 +23,7 @@ export const Rockets = () => {
   const myRef = useRef(null);
   const [inView, setInView] = useState(false);
   const rockets = useSelector(selectIsRockets);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (

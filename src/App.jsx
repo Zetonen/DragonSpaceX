@@ -6,11 +6,16 @@ import { Home } from "./pages/Home/Home";
 import { Toaster } from "react-hot-toast";
 import { RocketDetails } from "./pages/RocketDetails/RocketDetails";
 import { ModalSelector } from "./components/modals/ModalSelector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getRockets } from "./redux/rocket/operations";
 
 function App() {
   const [modalName, setModalName] = useState("");
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getRockets());
+  });
   return (
     <>
       <Routes>
@@ -21,7 +26,10 @@ function App() {
         </Route>
       </Routes>
       <Toaster />
-      <ModalSelector modalName={modalName} closeModal={() => setModalName("")} />
+      <ModalSelector
+        modalName={modalName}
+        closeModal={() => setModalName("")}
+      />
       <GlobalStyles />
     </>
   );
