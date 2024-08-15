@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import { CloseModalIcon } from "../../icons/CloseModalIcon";
 import BaseModalWrap from "../ModalWrap/ModalWrap";
 import {
@@ -11,15 +12,17 @@ import {
 } from "./SignUp.styled";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { register } from "../../../redux/user/operations";
+
 const initialValues = {
-  name: "",
+  userName: "",
   email: "",
   password: "",
 };
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const nameRegexp = /^[a-zA-Z]+$/;
 const schema = Yup.object().shape({
-  name: Yup.string()
+  userName: Yup.string()
     .matches(
       nameRegexp,
       "Only the first name. Only English letters are allowed"
@@ -35,6 +38,7 @@ const schema = Yup.object().shape({
 });
 
 export const SignUp = ({ onClose }) => {
+  const dispatch = useDispatch();
   return (
     <BaseModalWrap onClose={onClose}>
       <Window>
@@ -44,7 +48,9 @@ export const SignUp = ({ onClose }) => {
         <Formik
           initialValues={initialValues}
           onSubmit={(values, actions) => {
-            console.log(values);
+            dispatch(register(values));
+            actions.resetForm(initialValues);
+            onClose();
           }}
           validationSchema={schema}
         >
@@ -57,9 +63,9 @@ export const SignUp = ({ onClose }) => {
                   placeholder="Your name"
                   // onChange={handleChange}
                   value={values.name}
-                  name="name"
+                  name="userName"
                 />
-                <ErrMessage component="span" name="name" />
+                <ErrMessage component="span" name="userName" />
               </WrapField>
               <WrapField>
                 <InputField
