@@ -17,7 +17,6 @@ import { selectIsRocket } from "../../../redux/rocket/selectors";
 export const Hero = () => {
   const { id } = useParams();
   const rocket = useSelector((state) => selectIsRocket(state, id));
-  console.log(rocket);
   return (
     <HeroStyled>
       <Container>
@@ -34,9 +33,6 @@ export const Hero = () => {
 };
 
 const RocketsInfo = ({ rocket }) => {
-  console.log(
-    `${rocket.height_w_trunk.meters} M / ${rocket.height_w_trunk.feet} FT`
-  );
   return (
     <Card>
       <CardTitle>{rocket.name}</CardTitle>
