@@ -7,11 +7,14 @@ import { Toaster } from "react-hot-toast";
 import { RocketDetails } from "./pages/RocketDetails/RocketDetails";
 import { ModalSelector } from "./components/modals/ModalSelector";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getRockets } from "./redux/rocket/operations";
+import { selectIsLoadingRockets } from "./redux/rocket/selectors";
+import { Loader } from "./components/Loader/Loader";
 
 function App() {
   const [modalName, setModalName] = useState("");
+  const isLoadingRockets = useSelector(selectIsLoadingRockets);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRockets());
@@ -30,6 +33,7 @@ function App() {
         modalName={modalName}
         closeModal={() => setModalName("")}
       />
+      {isLoadingRockets && <Loader />}
       <GlobalStyles />
     </>
   );
