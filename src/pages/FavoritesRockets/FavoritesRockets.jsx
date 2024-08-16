@@ -10,7 +10,7 @@ import { RocketDetailsCard } from "../../components/RocketDetailsCard/RocketDeta
 
 export const FavoritesRockets = () => {
   const favoritesRockets = useSelector(selectFavoritesRockets);
-  console.log(favoritesRockets);
+
   return (
     <SectionStyled>
       <SectionContainer>

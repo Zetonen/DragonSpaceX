@@ -16,7 +16,7 @@ import { selectIsRocket } from "../../redux/rocket/selectors";
 export const RocketDetailsCard = ({ rocketId }) => {
   const isLogged = useSelector(selectIsLoggedIn);
   const rocket = useSelector((state) => selectIsRocket(state, rocketId));
-  console.log(rocket);
+
   return <Rocket>
     <ThumbImg>
       {isLogged && (
