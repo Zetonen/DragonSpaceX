@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { headerNavList } from "../../constants/header";
 import {
   DisabledLink,
@@ -14,11 +14,9 @@ import {
   WrapSignBtn,
 } from "./Header.styled";
 import { selectIsLoggedIn } from "../../redux/user/selectors";
-import { logout } from "../../redux/user/operations";
 
 export const Header = ({ setModalName }) => {
   const isLogged = useSelector(selectIsLoggedIn);
-  const dispatch = useDispatch();
   return (
     <HeaderStyled>
       <HeaderContainer>
@@ -37,7 +35,9 @@ export const Header = ({ setModalName }) => {
         {isLogged ? (
           <WrapSignBtn>
             <FavoriteBtn>Favorite</FavoriteBtn>
-            <LogoutBtn onClick={() => dispatch(logout())}>Log out</LogoutBtn>
+            <LogoutBtn onClick={() => setModalName("logout")}>
+              Log out
+            </LogoutBtn>
           </WrapSignBtn>
         ) : (
           <WrapSignBtn>
