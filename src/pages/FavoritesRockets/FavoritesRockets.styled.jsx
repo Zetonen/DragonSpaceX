@@ -36,9 +36,15 @@ export const Wrap = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     background-color: #ffffff;
+    border-radius: 100px;
+    transition: background-color 300ms ease-in-out;
   }
   &::-webkit-scrollbar-track {
     background-color: #6d6d6d;
+    border-radius: 100px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #6191ff;
   }
 `;
 
