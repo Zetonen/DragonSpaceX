@@ -34,7 +34,7 @@ export const Header = ({ setModalName }) => {
         </NavList>
         {isLogged ? (
           <WrapSignBtn>
-            <FavoriteBtn>Favorite</FavoriteBtn>
+            <FavoriteBtn to="/favorites">Favorite</FavoriteBtn>
             <LogoutBtn onClick={() => setModalName("logout")}>
               Log out
             </LogoutBtn>

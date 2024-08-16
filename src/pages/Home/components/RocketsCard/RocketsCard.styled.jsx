@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Card = styled(Link)`
+  position: relative;
   display: block;
   padding: 23px;
   border: 1px solid rgba(255, 255, 255, 0.2);

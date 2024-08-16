@@ -72,7 +72,14 @@ export const SignUpBtn = styled(Btn)`
 export const SignInBtn = styled(Btn)`
   border: 1px solid transparent;
 `;
-export const FavoriteBtn = styled(Btn)`
+export const FavoriteBtn = styled(Link)`
+  display: block;
+  padding: 7px 11px;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
   border: 1px solid transparent;
 `;
 export const LogoutBtn = styled(Btn)`
