@@ -24,7 +24,21 @@ export const Title = styled.h1`
 
 export const Wrap = styled.div`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 20px;
   padding: 23px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
+  &::-webkit-scrollbar {
+    width: 13px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #6d6d6d;
+  }
 `;
+

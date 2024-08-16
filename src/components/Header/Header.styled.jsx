@@ -34,6 +34,7 @@ export const NavList = styled.ul`
 `;
 export const NavListItemLink = styled(Link)`
   position: relative;
+  display: block;
   font-size: 16px;
   line-height: normal;
   text-transform: uppercase;

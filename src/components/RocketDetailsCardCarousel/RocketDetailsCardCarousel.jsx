@@ -1,8 +1,8 @@
-import { Img, SwiperStyled, ThumbImg } from "./ImgCarousel.styled";
 import { SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Img, SwiperStyled, ThumbImg } from "./RocketDetailsCardCarousel.styled";
 
-export const ImgCarousel = ({ slides, name }) => {
+export const RocketDetailsCardCarousel = ({ slides, name }) => {
   return (
     <SwiperStyled
       pagination={true}
