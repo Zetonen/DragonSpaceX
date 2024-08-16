@@ -20,10 +20,14 @@ const BaseModalWrap = ({ children, onClose }) => {
   };
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    document.body.classList.add('hide-scroll-bar');
+
     window.addEventListener("keydown", CloseModal);
 
     return () => {
       document.body.style.overflow = "auto";
+      document.body.classList.add('hide-scroll-bar');
+
       window.removeEventListener("keydown", CloseModal);
     };
   }, []);

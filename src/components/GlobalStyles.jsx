@@ -29,4 +29,10 @@ color: inherit;
 }
 a {
     text-decoration: none;
-}`;
+}
+.hide-scroll-bar{
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+`;
