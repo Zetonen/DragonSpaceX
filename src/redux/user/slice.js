@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, login, logout, refreshUser } from "./operations";
+import {
+  register,
+  login,
+  logout,
+  refreshUser,
+  sendFavoriteRocket,
+  deleteFavoriteRocket,
+} from "./operations";
 import toast from "react-hot-toast";
 
 const usersInitState = {
@@ -72,7 +79,17 @@ const usersSlice = createSlice({
         state.isRefreshing = false;
         state.isLoggedIn = false;
         state.isLoading = false;
-      }),
+      })
+      .addCase(sendFavoriteRocket.fulfilled, (state, action) => {
+        state.user.favoriteRockets.push(action.payload.rocketId);
+      })
+      .addCase(sendFavoriteRocket.rejected, printError)
+      .addCase(deleteFavoriteRocket.fulfilled, (state, action) => {
+        state.user.favoriteRockets = state.user.favoriteRockets.filter(
+          (id) => id !== action.payload.rocketId
+        );
+      })
+      .addCase(deleteFavoriteRocket.rejected, printError),
 });
 
 export const usersReducer = usersSlice.reducer;

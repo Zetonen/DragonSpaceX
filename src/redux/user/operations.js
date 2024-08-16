@@ -65,3 +65,36 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+export const sendFavoriteRocket = createAsyncThunk(
+  "users/addFavorite",
+  async (rocketId, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const isFavorite = state.user.user.favoriteRockets.includes(rocketId);
+    if (isFavorite || !state.user.isLoggedIn) {
+      return;
+    }
+    try {
+      const res = await axios.post(`/users/favorite/${rocketId}`);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+export const deleteFavoriteRocket = createAsyncThunk(
+  "users/deleteFavorite",
+  async (rocketId, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const isFavorite = state.user.user.favoriteRockets.includes(rocketId);
+    if (!isFavorite || !state.user.isLoggedIn) {
+      return;
+    }
+
+    try {
+      const res = await axios.delete(`/users/favorite/${rocketId}`);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

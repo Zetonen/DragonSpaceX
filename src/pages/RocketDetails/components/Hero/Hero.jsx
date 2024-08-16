@@ -15,10 +15,14 @@ import RocketImg from "/src/assets/images/rocket.gif";
 import { useSelector } from "react-redux";
 import { selectIsRocket } from "../../../../redux/rocket/selectors";
 import { ImgCarousel } from "../ImgCarousel/ImgCarousel";
+import { selectIsLoggedIn } from "../../../../redux/user/selectors";
+import FavoriteButton from "../../../../components/FavoriteButton/FavoriteButton";
 
 export const Hero = () => {
   const { id } = useParams();
   const rocket = useSelector((state) => selectIsRocket(state, id));
+  const isLogged = useSelector(selectIsLoggedIn);
+
   return (
     <HeroStyled>
       <Container>
@@ -26,6 +30,9 @@ export const Hero = () => {
         {rocket ? (
           <Rocket>
             <ThumbImg>
+              {isLogged && (
+                <FavoriteButton width={36} height={36} rocketId={rocket.id} />
+              )}
               {rocket.flickr_images.length > 0 ? (
                 <ImgCarousel slides={rocket.flickr_images} name={rocket.name} />
               ) : (

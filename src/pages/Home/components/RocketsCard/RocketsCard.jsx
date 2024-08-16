@@ -1,11 +1,16 @@
+import { useSelector } from "react-redux";
 import FavoriteButton from "../../../../components/FavoriteButton/FavoriteButton";
 import { Card, Field, Img, Text, Title } from "./RocketsCard.styled";
 import RocketImg from "/src/assets/images/rocket.gif";
+import { selectIsLoggedIn } from "../../../../redux/user/selectors";
 
 export const RocketsCard = ({ rocket }) => {
+  const isLogged = useSelector(selectIsLoggedIn);
   return (
     <Card to={`/rockets/${rocket.id}`}>
-      <FavoriteButton width={36} height={36}/>
+      {isLogged && (
+        <FavoriteButton width={36} height={36} rocketId={rocket.id} />
+      )}
       <Img src={RocketImg} alt={rocket.name} />
       <Title>{rocket.name}</Title>
       <Field>

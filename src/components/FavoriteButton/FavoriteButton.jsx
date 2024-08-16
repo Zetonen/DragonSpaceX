@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsFavoritesRocket } from "../../redux/user/selectors";
+import {
+  deleteFavoriteRocket,
+  sendFavoriteRocket,
+} from "../../redux/user/operations";
+import { Btn } from "./FavoriteButton.styled";
 
-const FavoriteButton = ({ width, height }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const FavoriteButton = ({ width, height, rocketId }) => {
+  const dispatch = useDispatch();
+  const isFavoriteRocket = useSelector((state) =>
+    selectIsFavoritesRocket(state, rocketId)
+  );
 
   const handleClick = (e) => {
     e.preventDefault();
-    setIsFavorite(!isFavorite);
+    if (isFavoriteRocket) {
+      dispatch(deleteFavoriteRocket(rocketId));
+      return;
+    }
+    dispatch(sendFavoriteRocket(rocketId));
   };
 
   return (
-    <button onClick={handleClick} style={buttonStyle}>
-      {isFavorite ? (
+    <Btn onClick={handleClick}>
+      {isFavoriteRocket ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -37,19 +50,8 @@ const FavoriteButton = ({ width, height }) => {
           <path d="M20.8 4.6a5.8 5.8 0 0 0-8.2 0L12 5.2l-.6-.6a5.8 5.8 0 0 0-8.2 8.2l8.8 8.8 8.8-8.8a5.8 5.8 0 0 0 0-8.2z" />
         </svg>
       )}
-    </button>
+    </Btn>
   );
-};
-
-const buttonStyle = {
-  position: "absolute",
-  top: "30px",
-  right: "30px",
-  zIndex: "1",
-  backgroundColor: "transparent",
-  border: "none",
-  cursor: "pointer",
-  padding: 0,
 };
 
 export default FavoriteButton;
