@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { StyledContainer } from "../../components/Container/Container.styled";
 
 export const SectionStyled = styled.section`
-  padding-top: 180px;
-  padding-bottom: 100px;
+  padding-top: 150px;
+  padding-bottom: 20px;
   height: 100vh;
 `;
 
@@ -14,8 +14,8 @@ export const SectionContainer = styled(StyledContainer)`
 `;
 
 export const Title = styled.h1`
-  margin-bottom: 32px;
-  font-size: 64px;
+  margin-bottom: 24px;
+  font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

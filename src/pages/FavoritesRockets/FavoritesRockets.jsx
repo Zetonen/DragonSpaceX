@@ -14,13 +14,17 @@ export const FavoritesRockets = () => {
   return (
     <SectionStyled>
       <SectionContainer>
-        <Title>{favoritesRockets.length > 0 || "Not"} Favorites Rockets</Title>
-        {favoritesRockets.length > 0 && (
-          <Wrap>
-            {favoritesRockets.map((rocketId) => (
-              <RocketDetailsCard key={rocketId} rocketId={rocketId} />
-            ))}
-          </Wrap>
+        {favoritesRockets.length > 0 ? (
+          <>
+            <Title>Favorites Rockets</Title>
+            <Wrap>
+              {favoritesRockets.map((rocketId) => (
+                <RocketDetailsCard key={rocketId} rocketId={rocketId} />
+              ))}
+            </Wrap>
+          </>
+        ) : (
+          <Title>{"You haven't added your favorite rockets yet"}</Title>
         )}
       </SectionContainer>
     </SectionStyled>
