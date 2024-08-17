@@ -2,19 +2,26 @@
 
 The project is a web application built using **React**. The application is designed to be a single-page application (SPA).
 
-## Technical Requirements-**Front-end Framework**: React (version 18.3.1)
--**Router**: React Router DOM (version 6.26.0)
--**State Management**: React Redux (version 9.1.2), Redux Toolkit (version 2.2.7)
--**Build Tool**: Vite (version 5.4.0)
+## Technical Requirements
+  - **Front-end Framework**: React (version 18.3.1)
+  - **Router**: React Router DOM (version 6.26.0)
+  - **State Management**: React Redux (version 9.1.2), Redux Toolkit (version 2.2.7)
+  - **Build Tool**: Vite (version 5.4.0)
 
-## Key Features and Functionalities-**Home Page**:
+## Key Features and Functionalities
+
+1. **Home Page**:
   - A hero section with a background video
   - A team section with a carousel
   - A rockets section with a list of rockets
--**Rocket Page**: A page with details for a specific rocket
--**Favorite Rocket Page**: A page for saved rockets (accessible only to registered users)
--**Error Page**: A 404 error page with a countdown timer that redirects to the home page after 5 seconds
--**User Features**: Registration and user authentication
+2. **Rocket Page**: 
+  - A page with details for a specific rocket
+3. **Favorite Rocket Page**: 
+  - A page for saved rockets (accessible only to registered users)
+4. **Error Page**: 
+  - A 404 error page with a countdown timer that redirects to the home page after 5 seconds
+5. **User Features**: 
+  - Registration and user authentication
 
 ## Dependencies-**axios**: For making HTTP requests to APIs
 -**formik**: For building forms and handling form data
