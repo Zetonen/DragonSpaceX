@@ -67,4 +67,4 @@ To deploy updates to the React web application on Netlify, integrating with GitH
     - Once deployment is complete, access your updated React web application using your custom domain.
 
 7. **Automatic Deployment**:
-  Enable automatic deployments. Go to **Build status** => **Active builds**. This way, any new commits to the selected branch trigger automatic deployments on Netlify.
+    - Enable automatic deployments. Go to **Build status** => **Active builds**. This way, any new commits to the selected branch trigger automatic deployments on Netlify.
