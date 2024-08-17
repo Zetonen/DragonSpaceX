@@ -44,27 +44,27 @@ The project is a web application built using **React**. The application is desig
 
 To deploy updates to the React web application on Netlify, integrating with GitHub and setting up a custom domain, follow these steps:
 
-1.**Commit Changes to GitHub**:
+1. **Commit Changes to GitHub**:
     - Ensure all changes are committed to the GitHub repository where the React project is hosted.
 
-2.**Set Up Continuous Deployment on Netlify**:
+2. **Set Up Continuous Deployment on Netlify**:
     - Log in to your Netlify account or create one if you haven't already.
     - Connect your Netlify account to GitHub to allow Netlify to access your repository.
     - Choose the repository with your React project on GitHub for deployment.
 
-3.**Configure Deploy Settings**:
+3. **Configure Deploy Settings**:
     - Specify the branch to deploy: `"main"`.
     - Define build commands: `"npm run build"` and publish directories: `"dist"`. For a React application built with Vite, default settings should suffice.
 
-4.**Set Up Custom Domain**:
+4. **Set Up Custom Domain**:
     - When deploying the project, specify your own domain name in the corresponding field.
 
-5.**Monitor Deployment Progress**:
+5. **Monitor Deployment Progress**:
     - Netlify will initiate the deployment process, building your React application and publishing it to the specified domain.
     - Track deployment progress in the Netlify dashboard.
 
-6.**Access the Deployed Application**:
+6. **Access the Deployed Application**:
     - Once deployment is complete, access your updated React web application using your custom domain.
 
-7.**Automatic Deployment**:
-    - Enable automatic deployments. Go to **Build status** => **Active builds**. This way, any new commits to the selected branch trigger automatic deployments on Netlify.
+7. **Automatic Deployment**:
+  Enable automatic deployments. Go to **Build status** => **Active builds**. This way, any new commits to the selected branch trigger automatic deployments on Netlify.
