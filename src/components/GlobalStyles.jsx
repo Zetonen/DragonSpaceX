@@ -6,7 +6,7 @@ import { colors } from "../constants/colors";
 export const GlobalStyles = createGlobalStyle`
 body {  
   color: ${colors.WHITE};
-  font-family: "Rubik";
+  font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 400;
   background: ${colors.BLACK};
