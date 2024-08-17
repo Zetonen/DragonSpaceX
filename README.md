@@ -7,28 +7,24 @@ The project is a web application built using **React**. The application is desig
 -**State Management**: React Redux (version 9.1.2), Redux Toolkit (version 2.2.7)
 -**Build Tool**: Vite (version 5.4.0)
 
-## Key Features and Functionalities-**Home Page**: 
-  - A hero section with a background video.
-  - A team section with a carousel.
-  - A rockets section with a list of rockets.
--**Rocket Page**: 
-  - A page with details for a rocket.
--**Favorite Rocket Page**: 
-  - A page with saved rockets (only registered users have access).
--**Error Page**: 
-  - A 404 error page with a countdown timer that redirects to the home page after 5 seconds.
--**User Features**: 
-  - Registration and user authentication.
+## Key Features and Functionalities-**Home Page**:
+  - A hero section with a background video
+  - A team section with a carousel
+  - A rockets section with a list of rockets
+-**Rocket Page**: A page with details for a specific rocket
+-**Favorite Rocket Page**: A page for saved rockets (accessible only to registered users)
+-**Error Page**: A 404 error page with a countdown timer that redirects to the home page after 5 seconds
+-**User Features**: Registration and user authentication
 
-## Dependencies-`axios`: For making HTTP requests to APIs.
--`formik`: For building forms and handling form data.
--`react-countup`: For animating numbers and counters.
--`react-loader-spinner`: For displaying loading spinners.
--`react-player`: For playing videos.
--`styled-components`: For styling components and layout.
--`swiper`: For building carousels and sliders.
--`react-hot-toast`: For displaying toasts.
--`redux-persist`: For persisting redux state.
+## Dependencies-**axios**: For making HTTP requests to APIs
+-**formik**: For building forms and handling form data
+-**react-countup**: For animating numbers and counters
+-**react-loader-spinner**: For displaying loading spinners
+-**react-player**: For playing videos
+-**styled-components**: For styling components and layout
+-**swiper**: For building carousels and sliders
+-**react-hot-toast**: For displaying toasts
+-**redux-persist**: For persisting redux state
 
 ## Deployment-**Build Tool**: Vite
 -**Deployment Strategy**: Netlify
