@@ -23,18 +23,22 @@ The project is a web application built using **React**. The application is desig
 5. **User Features**: 
   - Registration and user authentication
 
-## Dependencies-**axios**: For making HTTP requests to APIs
--**formik**: For building forms and handling form data
--**react-countup**: For animating numbers and counters
--**react-loader-spinner**: For displaying loading spinners
--**react-player**: For playing videos
--**styled-components**: For styling components and layout
--**swiper**: For building carousels and sliders
--**react-hot-toast**: For displaying toasts
--**redux-persist**: For persisting redux state
+## Dependencies
 
-## Deployment-**Build Tool**: Vite
--**Deployment Strategy**: Netlify
+  - **axios**: For making HTTP requests to APIs
+  - **formik**: For building forms and handling form data
+  - **react-countup**: For animating numbers and counters
+  - **react-loader-spinner**: For displaying loading spinners
+  - **react-player**: For playing videos
+  - **styled-components**: For styling components and layout
+  - **swiper**: For building carousels and sliders
+  - **react-hot-toast**: For displaying toasts
+  - **redux-persist**: For persisting redux state
+
+## Deployment
+
+  - **Build Tool**: Vite
+  - **Deployment Strategy**: Netlify
 
 ### Deployment on Netlify with GitHub Integration and Custom Domain
 
