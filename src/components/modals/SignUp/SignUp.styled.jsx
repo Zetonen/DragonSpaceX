@@ -6,7 +6,7 @@ export const Window = styled.div`
   position: relative;
   width: 600px;
   border-radius: 10px;
-  padding: 72px 48px;
+  padding: 72px 48px 48px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -32,7 +32,7 @@ export const WrapField = styled.div`
   padding-bottom: 8px;
   margin-bottom: 20px;
   &:last-of-type {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -82,4 +82,15 @@ export const ErrMessage = styled(ErrorMessage)`
   letter-spacing: 1.9px;
   text-align: center;
   transform: translate(-50%, 100%);
+`;
+export const SwitchBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: ${colors.BLUE};
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 1.9px;
+  text-align: center;
+  text-decoration: underline;
 `;

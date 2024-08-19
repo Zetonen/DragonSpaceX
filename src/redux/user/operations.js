@@ -98,3 +98,27 @@ export const deleteFavoriteRocket = createAsyncThunk(
     }
   }
 );
+
+export const verifyEmail = createAsyncThunk(
+  "users/verifyEmail",
+  async (token, thunkAPI) => {
+    try {
+      const res = await axios.get(`/users/verify/${token}`);
+      setAuthHeader(res.data.token);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+export const resendVerifyEmail = createAsyncThunk(
+  "users/resendVerifyEmail",
+  async (email, thunkAPI) => {
+    try {
+      const res = await axios.post(`/users/verify`,{email});
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

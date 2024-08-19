@@ -17,7 +17,7 @@ import {
 } from "./redux/user/selectors";
 import { FavoritesRockets } from "./pages/FavoritesRockets/FavoritesRockets";
 import { PrivateRoute } from "./components/PrivateRoute";
-import { refreshUser } from "./redux/user/operations";
+import { Verify } from "./pages/Verify/Verify";
 
 function App() {
   const [modalName, setModalName] = useState("");
@@ -28,9 +28,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRockets());
-  }, [dispatch]);
-  useEffect(() => {
-    dispatch(refreshUser());
   }, [dispatch]);
   return (
     <>
@@ -44,8 +41,9 @@ function App() {
           />
           <Route path="*" element={<Page404 />} />
         </Route>
+        <Route path="/verify/:verifyToken" element={<Verify />} />
       </Routes>
-      <Toaster />
+      <Toaster toastOptions={{ duration: 4000 }} />
       <ModalSelector
         modalName={modalName}
         closeModal={() => setModalName("")}

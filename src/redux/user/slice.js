@@ -6,6 +6,8 @@ import {
   refreshUser,
   sendFavoriteRocket,
   deleteFavoriteRocket,
+  verifyEmail,
+  resendVerifyEmail,
 } from "./operations";
 import toast from "react-hot-toast";
 
@@ -19,6 +21,7 @@ const usersInitState = {
   isRefreshing: false,
   isLoggedIn: false,
   isLoading: false,
+  isVerificatory: false,
 };
 
 const printError = (state, action) => {
@@ -35,10 +38,8 @@ const usersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.isLoggedIn = true;
         state.isLoading = false;
-        state.token = action.payload.token;
+        toast.success(action.payload.message, { duration: 8000 });
       })
       .addCase(register.rejected, printError)
       .addCase(login.pending, (state) => {
@@ -89,7 +90,29 @@ const usersSlice = createSlice({
           (id) => id !== action.payload.rocketId
         );
       })
-      .addCase(deleteFavoriteRocket.rejected, printError),
+      .addCase(deleteFavoriteRocket.rejected, printError)
+      .addCase(verifyEmail.pending, (state) => {
+        state.isLoading = true;
+        state.isVerificatory = true;
+      })
+      .addCase(verifyEmail.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoading = false;
+        state.isLoggedIn = true;
+        state.isVerificatory = false;
+
+        toast.success("Email successfully verified");
+      })
+      .addCase(verifyEmail.rejected, printError)
+      .addCase(resendVerifyEmail.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(resendVerifyEmail.fulfilled, (state, action) => {
+        state.isLoading = false;
+        toast.success(action.payload.message, { duration: 8000 });
+      })
+      .addCase(resendVerifyEmail.rejected, printError),
 });
 
 export const usersReducer = usersSlice.reducer;

@@ -11,3 +11,5 @@ export const selectFavoritesRockets = (state) =>
 
 export const selectIsFavoritesRocket = (state, id) =>
   state.user.user.favoriteRockets.includes(id);
+
+export const selectIsVerificatory = (state) => state.user.isVerificatory;
