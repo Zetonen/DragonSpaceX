@@ -12,37 +12,8 @@
     <script type="module" src="/src/index.jsx"></script>
     <div id="kwizbot_widget"></div>
     <script defer>
-      (function (k, w, i, z, b, o, t) {
-        k["KwizbotWidget"] = b;
-        (k[b] =
-          k[b] ||
-          function () {
-            w.head.insertAdjacentHTML(
-              "beforeend",
-              '<style type="text/css">.showAfterCssLoaded{display: none}</style>'
-            );
-            (k[b].q = k[b].q || []).push(arguments);
-          }),
-          (k[b].l = 1 * new Date());
-        (o = w.createElement(i)), (t = w.getElementsByTagName(i)[0]);
-        o.async = 1;
-        o.src = z;
-        t.parentNode.insertBefore(o, t);
-      })(
-        window,
-        document,
-        "script",
-        "https://widget.kwizbot.io/kwjs_v2.js",
-        "kw"
-      );
-      kw("init", {
-        language_code: "uk",
-        bot_id: "261",
-        params_from_site: {},
-        v2_value: ".demo",
-        open_on_msg: false,
-        btn_restart_enabled: false,
-      });
+    (function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget-anc.kwizbot.io/kwjs.js', 'kw');
+    kw('init', {"language_code":"uk","bot_id":"3","params_from_site":{},"open_on_msg":false,"btn_restart_enabled":false}) 
     </script>
 
     <!-- <script type="text/javascript">
