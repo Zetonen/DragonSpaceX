@@ -12,27 +12,40 @@
     <script type="module" src="/src/index.jsx"></script>
     <div id="kwizbot_widget"></div>
     <div id="iframeHolder"></div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-      let src =
-      "https://smartkasa.kwizbot.io/autologin?en&user=admin@evergreens.in.ua&redirect_module=OperatorPanelChats&login_key=5E3mq71cYFL6r5*3";
+    <script defer>
+      (function (k, w, i, z, b, o, t) {
+        k["KwizbotWidget"] = b;
+        (k[b] =
+          k[b] ||
+          function () {
+            w.head.insertAdjacentHTML(
+              "beforeend",
+              '<style type="text/css">.showAfterCssLoaded{display: none}</style>'
+            );
+            (k[b].q = k[b].q || []).push(arguments);
+          }),
+          (k[b].l = 1 * new Date());
+        (o = w.createElement(i)), (t = w.getElementsByTagName(i)[0]);
+        o.async = 1;
+        o.src = z;
+        t.parentNode.insertBefore(o, t);
+      })(
+        window,
+        document,
+        "script",
+        "https://widget-ta.kwizbot.io/kwjs.js",
+        "kw"
+      );
+      kw("init", {
+        language_code: "uk",
+        bot_id: "6",
+        params_from_site: {},
+        open_on_msg: false,
+        btn_restart_enabled: false,
+      });
+    </script>
 
-      function createFrame() {
-        let frame = document.createElement("iframe");
-        frame.setAttribute("src", src);
-        frame.setAttribute("name", "Kwizbot");
-        frame.setAttribute("id", "frame");
-        frame.frameBorder = 0;
-        frame.width = 100 + "%";
-        frame.height = 700 + "px";
-        document.getElementById("iframeHolder").appendChild(frame);
-      }
-
-      createFrame();
-    });
-</script>
-
-<!-- <script defer>
+    <!-- <script defer>
   (function (k, w, i, z, b, o, t) {k['KwizbotWidget'] = b; k[b] = k[b] || function () { w.head.insertAdjacentHTML('beforeend', '<style type="text/css">.showAfterCssLoaded{display: none}</style>'); (k[b].q = k[b].q || []).push(arguments) }, k[b].l = 1 * new Date(); o = w.createElement(i), t = w.getElementsByTagName(i)[0]; o.async = 1; o.src = z; t.parentNode.insertBefore(o, t) })(window, document, 'script', 'https://widget-anc.kwizbot.io/kwjs.js', 'kw');
   kw('init', {"language_code":"uk","bot_id":"3","params_from_site":{},"open_on_msg":false,"btn_restart_enabled":false}) 
   </script> -->
